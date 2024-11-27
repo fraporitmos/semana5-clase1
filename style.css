@@ -1,0 +1,130 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: aqua;
+    min-height: 100vh;
+}
+
+.grid-container{
+    display: grid;
+    grid-template: 
+     "header" 10%
+     "banner1" 20%
+     "containerItems" 35%
+     "banner2" 20%
+     "footer" 15% ;
+
+     .bannerCard{
+        width: 120px;
+        height: auto;
+        
+     }
+
+     .bannerCard img{
+        height: 80px;
+     }
+     .bannerCard h5{
+        font-size: 16px;
+     }
+
+     .bannerCard p{
+        font-size: 9px;
+    
+     }
+
+     .header{
+        grid-area: header;
+     }
+
+     .banner1{
+        grid-area: banner1;
+        background-color: rgb(245, 204, 37);
+     }
+
+     .containerItems{
+        grid-area: containerItems;
+        display: flex;
+
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 4em;
+        background-color: black;
+        overflow: auto;
+     }
+
+     .banner2{
+        grid-area: banner2;
+        background-color: rgb(92, 37, 245);
+     }
+
+     .footer{
+        grid-area: footer;
+        background-color: rgb(245, 37, 176);
+     }
+
+     /* Tablets */
+
+     @media(min-width: 640px){
+        grid-template: 
+        "header  header header header " 80px
+        "banner1  banner1 containerItems containerItems" 
+        "banner2 banner2  banner2 banner2" 140px
+        "footer footer footer footer" 80px;
+
+        .containerItems{
+            flex-direction: row;
+            flex-wrap: wrap;
+         }
+
+         .bannerCard{
+            width: 140px;
+            height: auto;
+            
+         }
+    
+         .bannerCard img{
+            height: 100px;
+         }
+
+         .bannerCard h5{
+            font-size: 18px;
+         }
+    
+         .bannerCard p{
+            font-size: 12spx;
+        
+         }
+     }
+
+     /* PC, Laptos, etc */
+     @media(min-width: 940px){
+        grid-template: 
+        "header  header header header header" 80px
+        "banner1  containerItems containerItems containerItems  banner2" auto
+        "footer footer footer footer footer" 80px;
+
+        .bannerCard{
+            width: 160px;
+            height: auto;
+         }
+    
+         .bannerCard img{
+            height: 120px;
+         }
+
+         .bannerCard h5{
+            font-size: 22px;
+         }
+    
+         .bannerCard p{
+            font-size: 14spx;
+         }
+        
+     }
+
+}
